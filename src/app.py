@@ -4,15 +4,12 @@ from prefix_tree.prefix_tree import PrefixTree
 
 tree = PrefixTree()
 
-tree.insert_prefix("hugo")
-tree.insert_prefix("hej")
-tree.insert_prefix("hejsan")
+tree.insert("hugo")
+tree.insert("hej")
+tree.insert("hejsan")
+tree.insert("heasan")
 
-tree.print_tree(tree.root)
-
-#print(tree.hasWord("hugo"))
-#print(tree.hasWord("hejsan"))
-#print(tree.hasWord("heja"))
+print(tree.find_sub_tree("he").children)
 
 # Initialize the Flask app instance
 app = Flask(__name__)
