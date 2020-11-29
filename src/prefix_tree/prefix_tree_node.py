@@ -1,5 +1,5 @@
 # Represents a node in the prefix three
-class Node:
+class PrefixTreeNode:
     def __init__(self):
         self.children = dict() # Map of characters to other Nodes
         self.is_end = False # "End of word" - True if the node is the last representing a word

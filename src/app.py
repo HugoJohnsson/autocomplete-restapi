@@ -1,15 +1,5 @@
 import os
 from flask import Flask, jsonify
-from prefix_tree.prefix_tree import PrefixTree
-
-tree = PrefixTree()
-
-tree.insert("hugo")
-tree.insert("hej")
-tree.insert("hejsan")
-tree.insert("heasan")
-
-print(tree.find_sub_tree("he").children)
 
 # Initialize the Flask app instance
 app = Flask(__name__)
