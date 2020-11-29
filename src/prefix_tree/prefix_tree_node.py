@@ -1,4 +1,4 @@
-class PrefixTreeNode:
+class _PrefixTreeNode:
     """
         Represents a node in the prefix three
 

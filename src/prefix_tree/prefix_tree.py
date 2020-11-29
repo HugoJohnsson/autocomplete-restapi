@@ -1,4 +1,4 @@
-from .prefix_tree_node import PrefixTreeNode
+from .prefix_tree_node import _PrefixTreeNode
 class PrefixTree:
     """
     Represents a PrefixTree.
@@ -7,13 +7,13 @@ class PrefixTree:
 
     Attributes
     ----------
-    root : PrefixTreeNode
+    root : _PrefixTreeNode
         holds the root node of the prefix tree
     
     """
 
     def __init__(self):
-        self.root = PrefixTreeNode()
+        self.root = _PrefixTreeNode()
 
     def insert(self, phrase, current_node = None, index = 0):
         """ 
@@ -21,7 +21,7 @@ class PrefixTree:
 
         Args:
             phrase ([string]): [the phrase to insert]
-            current_node ([PrefixTreeNode], optional): [holds the current node when calling itself]. Defaults to None.
+            current_node ([_PrefixTreeNode], optional): [holds the current node when calling itself]. Defaults to None.
             index (int, optional): [index for the current character we are looking at]. Defaults to 0.
         """
 
@@ -42,7 +42,7 @@ class PrefixTree:
 
         if not new_node: # Current node does not have a child with the current character
             # Create new Node and add it to the current node's children
-            new_node = PrefixTreeNode()
+            new_node = _PrefixTreeNode()
             current_node.children[current_char] = new_node
         
         # Recursively call insert again with the new child node and index + 1 to get the next character
@@ -84,11 +84,11 @@ class PrefixTree:
 
         Args:
             prefix ([string]): [the prefix we want to find the subtree root node for]
-            current_node ([PrefixTreeNode], optional): [holds the current node when calling itself]. Defaults to None.
+            current_node ([_PrefixTreeNode], optional): [holds the current node when calling itself]. Defaults to None.
             index (int, optional): [index for the current character we are looking at]. Defaults to 0.
 
         Returns:
-            [type]: [description]
+            [list[string]]: [list of all matching phrases]
         """
         if len(prefix) == index: # If the length of the prefix is 0 we just return None the very first time the function gets called
             return current_node
