@@ -29,6 +29,9 @@ class PrefixTreeService:
             [list[string]]: [list of all matching phrases]
         """
         return self.prefix_tree.find_matching_phrases(prefix)
+
+    def insert(self, phrase):
+        self.prefix_tree.insert(phrase)
     
 
 

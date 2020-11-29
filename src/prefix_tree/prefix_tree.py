@@ -26,7 +26,7 @@ class PrefixTree:
         """
 
         if len(phrase) < 2: # Phrase not long enough
-            return False
+            raise ValueError('Phrase to short')
 
         if not current_node: # First time called
             current_node = self.root
