@@ -1,6 +1,22 @@
-# Represents a node in the prefix three
 class PrefixTreeNode:
+    """
+        Represents a node in the prefix three
+
+        ...
+
+        Attributes
+        ----------
+        children : dict
+            represents the child nodes with a map of characters to other PrefixTreeNode 
+        is_end : bool
+            is True if node represents the end of a phrase
+        phrase : string
+            stores the entire phrase if node has "is_end" set to True to simplify
+            the process when trying to get all matching phrases in the tree
+        
+        """
+
     def __init__(self):
-        self.children = dict() # Map of characters to other Nodes
-        self.is_end = False # "End of word" - True if the node is the last representing a word
-        self.phrase = "" # Stores the entire phrase for faster results when trying to get all matching phrases in the tree
+        self.children = dict()
+        self.is_end = False
+        self.phrase = ""

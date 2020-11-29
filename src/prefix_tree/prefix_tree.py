@@ -20,7 +20,7 @@ class PrefixTree:
         Inserts a given phrase to the tree, this is a recursive method.
 
         Args:
-            phrase ([String]): [the phrase to insert]
+            phrase ([string]): [the phrase to insert]
             current_node ([PrefixTreeNode], optional): [holds the current node when calling itself]. Defaults to None.
             index (int, optional): [index for the current character we are looking at]. Defaults to 0.
         """
@@ -53,7 +53,7 @@ class PrefixTree:
         Returns a list of all matching phrases for the given prefix.
 
         Args:
-            prefix ([String]): [the prefix we want to find matching phrases for]
+            prefix ([string]): [the prefix we want to find matching phrases for]
         """
         def _find_matching_phrases(node, result): # Helper function
             if node.is_end:
@@ -83,7 +83,7 @@ class PrefixTree:
         the subtree we want to search based on the given prefix.
 
         Args:
-            prefix ([String]): [the prefix we want to find the subtree root node for]
+            prefix ([string]): [the prefix we want to find the subtree root node for]
             current_node ([PrefixTreeNode], optional): [holds the current node when calling itself]. Defaults to None.
             index (int, optional): [index for the current character we are looking at]. Defaults to 0.
 
