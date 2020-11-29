@@ -2,6 +2,18 @@ import os
 from flask import Flask, jsonify 
 from service.prefix_tree_service import prefix_tree_service
 
+import redis
+
+r = redis.Redis(
+host='redis',
+port=6379,
+password='')
+
+r.set('foo', 'bar')
+value = r.get('foo')
+print(value)
+
+
 # Initialize the Flask app instance
 app = Flask(__name__)
 
