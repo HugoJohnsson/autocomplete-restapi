@@ -41,7 +41,9 @@ class PrefixTreeService:
 
         if not result: # Cache miss
             result = self.prefix_tree.find_matching_phrases(prefix)
-            self.cache_service.insert(prefix, result)
+
+            if result: # Only insert into cache if we got more than 0 matching phrases
+                self.cache_service.insert(prefix, result)
 
         return result
 
