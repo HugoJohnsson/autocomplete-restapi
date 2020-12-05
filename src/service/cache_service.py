@@ -38,7 +38,7 @@ class CacheService:
     def insert(self, prefix, matching_phrases):
         """
         Inserts a list of matching phrases into our cache
-        as a Redis Sorted Set.
+        as a Redis Sorted Set (ZRANGE).
 
         Args:
             prefix ([string])
