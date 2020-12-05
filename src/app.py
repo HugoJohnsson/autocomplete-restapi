@@ -1,10 +1,12 @@
 import os
 import sys
-from flask import Flask, jsonify 
+from flask import Flask, jsonify
+from flask_cors import CORS
 from service.prefix_tree_service import prefix_tree_service
 
 # Initialize the Flask app instance
 app = Flask(__name__)
+CORS(app)
 
 # Load all words in the database into the prefix tree
 words_file = open("words.txt", "r")
